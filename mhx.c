@@ -166,7 +166,7 @@ int main(int argc, char *argv[]) {
             printf("Edited %d bytes starting from 0x%zx\n", count, loc - count);
         } else if (strcmp(command, "q") == 0) {  // Quit
             char save_choice;
-            printf("Save buffer? y/n [yes]: ");
+            printf("Save buffer? y/n: ");
             if (scanf(" %c", &save_choice) != 1) {
                 break;
             }
