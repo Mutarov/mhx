@@ -1,9 +1,9 @@
 /*
 ==============================
-Murat's Hex Editor (mhx)
+Mutarov's Hex Editor (mhx)
 A minimalist hex editor for command-line use.
 
-By Murat N.S. 2024
+By Fedya N.S. 2024
 ==============================
 */
 #include <stdio.h>
