@@ -1,4 +1,4 @@
-# Murat's Hex Editor (mhx)
+# Mutarov's Hex Editor (mhx)
 
 A minimalist hex editor designed for command-line usage.
 
