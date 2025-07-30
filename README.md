@@ -46,7 +46,7 @@ mhx <file>
 ## License
 This project is licensed under the GPL v3 - see [LICENSE](LICENSE) file for details
 ## Author
-By Murat N.S. 2024
+By Mutariv N.S. 2024
 ## Contribute
 I welcome contributions! if you'd like to contribute to Murat's Hex Editor (mhx), please follow these steps:
 1. Fork the repository: Click the "Fork" button on the top-right corner of this page.
