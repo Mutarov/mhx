@@ -23,7 +23,7 @@ A minimalist hex editor designed for command-line usage.
 ## Installation
 
 1. Clone the repository:
-   ``ash
+   ```sh
    git clone https://github.com/Mutarov/mhx.git
    ```
 2. Navigate to the project directory:
