@@ -3,7 +3,7 @@
 Mutarov's Hex Editor (mhx)
 A minimalist hex editor for command-line use.
 
-By Fedya N.S. 2024
+By Mutarov N.S. 2024
 ==============================
 */
 #include <stdio.h>
