@@ -15,7 +15,6 @@ $(OUT): $(SRC)
 clean:
 	rm -f $(OUT)
 
-
 install: $(OUT)
 	cp $(OUT) /usr/local/bin/
 
