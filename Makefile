@@ -19,5 +19,8 @@ clean:
 install: $(OUT)
 	cp $(OUT) /usr/local/bin/
 
+uninstall: $(OUT)
+        rm /usr/local/bin/$(OUT)
+
 .PHONY: all clean install
 
