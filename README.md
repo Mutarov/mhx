@@ -23,32 +23,32 @@ A minimalist hex editor designed for command-line usage.
 ## Installation
 
 1. Clone the repository:
-   ```bash
+   ``ash
    git clone https://github.com/Mutarov/mhx.git
    ```
 2. Navigate to the project directory:
-   ```bash
+   ```sh
    cd mhx
    ```
-3. Compile the program using ```make```:
-   ```bash
+3. Compile the program using `make`:
+   ```sh
    make
    ```
 4. Optionally, install the program to your system:
-   ```bash
+   ```sh
    sudo make install
    ```
 ## Usage
 To run the hex editor, simply execute the compiled binary:
-```bash
+```sh
 mhx <file>
 ```
 ## License
 This project is licensed under the GPL v3 - see [LICENSE](LICENSE) file for details
 ## Author
-By Mutariv N.S. 2024
+By Mutarov N.S. 2024
 ## Contribute
-I welcome contributions! if you'd like to contribute to Murat's Hex Editor (mhx), please follow these steps:
+I welcome contributions! if you'd like to contribute to Mutarov's Hex Editor (mhx), please follow these steps:
 1. Fork the repository: Click the "Fork" button on the top-right corner of this page.
 2. Clone your fork:
    ```bash
