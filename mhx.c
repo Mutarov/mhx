@@ -146,24 +146,49 @@ int main(int argc, char *argv[]) {
                 }
             }
         } else if (strncmp(command, "e ", 2) == 0) {  // Edit at current location
-            unsigned char edit_bytes[256];
-            int count = 0;
-            char *ptr = command + 2;
-            while (sscanf(ptr, "%2hhx", &edit_bytes[count]) == 1) {
-                ptr += 2;
-                count++;
+    char *ptr = command + 2;
+    size_t len = strlen(ptr);
+    
+    // Check if string is empty or has odd length
+    if (len == 0 || len % 2 != 0) {
+        printf("Error: Hex string must have even number of characters\n");
+        continue;
+    }
+    
+    // Check all characters are valid hex digits
+    for (size_t i = 0; i < len; i++) {
+        if (!isxdigit(ptr[i])) {
+            printf("Error: Invalid hex character '%c' at position %zu\n", ptr[i], i);
+            continue;
+        }
+    }
+    
+    unsigned char edit_bytes[256];
+    int count = 0;
+    char *current_ptr = ptr;
+    
+    while (*current_ptr && count < 256) {
+        if (sscanf(current_ptr, "%2hhx", &edit_bytes[count]) != 1) {
+            printf("Error: Failed to parse hex byte at position %zu\n", current_ptr - ptr);
+            break;
+        }
+        current_ptr += 2;
+        count++;
+    }
+    
+    if (count > 0) {
+        for (int i = 0; i < count; i++) {
+            if (loc + i < buffer_size) {
+                buffer[loc + i] = edit_bytes[i];
+            } else {
+                extend_buffer(&buffer, &buffer_size, loc + i + 1);
+                buffer[loc + i] = edit_bytes[i];
             }
-
-            for (int i = 0; i < count; i++) {
-                if (loc + i < buffer_size) {
-                    buffer[loc + i] = edit_bytes[i];
-                } else {
-                    extend_buffer(&buffer, &buffer_size, loc + i + 1);
-                    buffer[loc + i] = edit_bytes[i];
-                }
-            }
-            loc += count;  // Move location forward after editing
-            printf("Edited %d bytes starting from 0x%zx\n", count, loc - count);
+        }
+        loc += count;  // Move location forward after editing
+        printf("Edited %d bytes starting from 0x%zx\n", count, loc - count);
+    }
+}
         } else if (strcmp(command, "q") == 0) {  // Quit
             char save_choice;
             printf("Save buffer? y/n: ");
