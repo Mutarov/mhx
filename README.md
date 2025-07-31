@@ -17,8 +17,9 @@ A minimalist hex editor designed for command-line usage.
   - `c <loc>` — Change current location to `<loc>`, enabling edits.
   - `e <bytes>` — Edit the content at the current location. Example: `e 4b 9d 12` changes the byte values at the current location.
 
-- **Exit**:
+- **Misc**:
   - `q` — Quit the editor. It will ask if you want to save the changes before quitting.
+  - `h` - Show help message.
   
 ## Installation
 
