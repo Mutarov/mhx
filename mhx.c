@@ -146,14 +146,14 @@ int main(int argc, char *argv[]) {
                 }
             }
         } else if (strncmp(command, "e ", 2) == 0) {  // Edit at current location
-    char *ptr = command + 2;
-    size_t len = strlen(ptr);
+          char *ptr = command + 2;
+          size_t len = strlen(ptr);
     
-    // Check if string is empty or has odd length
-    if (len == 0 || len % 2 != 0) {
-        printf("Error: Hex string must have even number of characters\n");
-        continue;
-    }
+          // Check if string is empty or has odd length
+          if (len == 0 || len % 2 != 0) {
+              printf("Error: Hex string must have even number of characters\n");
+              continue;
+          }
     
     // Check all characters are valid hex digits
     for (size_t i = 0; i < len; i++) {
